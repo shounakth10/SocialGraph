@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Graph Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.0/cytoscape.min.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Network Intelligence</p>
+          <h1>Social Graph Explorer</h1>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <div class="control search-control">
+          <label for="searchInput">Search people</label>
+          <div class="inline-controls">
+            <input id="searchInput" type="text" placeholder="Search username or name" />
+            <button id="searchBtn" type="button">Search</button>
+          </div>
+        </div>
+
+        <div class="control path-control">
+          <label>Shortest path</label>
+          <div class="inline-controls collapsed">
+            <select id="pathSource"></select>
+            <select id="pathTarget"></select>
+            <button id="findPathBtn" type="button">Find</button>
+          </div>
+        </div>
+
+        <div class="control action-control">
+          <label>Quick actions</label>
+          <div class="inline-controls">
+            <select id="compareSource" aria-label="First person for mutual friends"></select>
+            <select id="compareTarget"></select>
+            <button id="mutualBtn" type="button">Mutual friends</button>
+            <button id="fitBtn" type="button" class="secondary">Fit view</button>
+            <button id="resetBtn" type="button" class="secondary">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <main class="content-wrap">
+        <section class="graph-panel">
+          <div id="graph" aria-label="Interactive social graph"></div>
+          <div id="statusMessage" class="status-banner">Map is ready.</div>
+          <div id="tooltip" class="tooltip hidden"></div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="panel-card details-card">
+            <h2>Selected profile</h2>
+            <div id="personDetails" class="empty-state">
+              Select a person in the graph to view profile details.
+            </div>
+          </section>
+
+          <section class="panel-card">
+            <h3>Mutual friends</h3>
+            <div id="mutualResults" class="empty-state">Choose two people to compare their mutual friends.</div>
+          </section>
+
+          <section class="panel-card">
+            <h3>Search results</h3>
+            <ul id="searchResults" class="result-list"></ul>
+          </section>
+
+          <section class="panel-card">
+            <h3>Friend suggestions</h3>
+            <ul id="suggestionsList" class="suggestion-list"></ul>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

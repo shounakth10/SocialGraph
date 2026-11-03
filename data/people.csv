@@ -1,0 +1,13 @@
+username,display_name,connections
+rahul,Rahul Sharma,"priya,ananya,arjun,neha"
+priya,Priya Nair,"rahul,ananya,meera,rita"
+ananya,Ananya Verma,"rahul,priya,kiran,harsh"
+arjun,Arjun Kumar,"rahul,neha,vikas"
+neha,Neha Rao,"rahul,arjun,rita,zoya"
+rita,Rita Sethi,"priya,neha,meera"
+vikas,Vikas Malhotra,"arjun,meera,kiran"
+meera,Meera Joshi,"priya,rita,vikas,tanvi"
+kiran,Kiran Patel,"ananya,vikas,tanvi,zoya"
+zoya,Zoya Khan,"neha,kiran,harsh"
+harsh,Harsh Singh,"ananya,zoya,tanvi"
+tanvi,Tanvi Gupta,"meera,kiran,harsh"
